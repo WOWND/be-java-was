@@ -64,9 +64,9 @@ public class UserDao {
             try (ResultSet rs = ps.executeQuery()) {
                 if (rs.next()) {
                     Long id = rs.getLong("id");
-                    String userId = rs.getString("userId");
+                    String userId = rs.getString("userid");
                     String password = rs.getString("password");
-                    String userName = rs.getString("userName");
+                    String userName = rs.getString("username");
                     User u = new User(id, userId, password, userName, null);
                     return Optional.of(u);
                 }

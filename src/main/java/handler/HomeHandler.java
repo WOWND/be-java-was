@@ -21,9 +21,7 @@ public class HomeHandler {
     public String home(Session session, TemplateData data) {
         data.add("user", session.get("user"));
         List<Article> all = articleDao.findAll();
-        for (Article article : all) {
-            System.out.println(article);
-        }
+
         data.add("articles", all);
         return "/index.html";
     }

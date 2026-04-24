@@ -27,7 +27,7 @@ public class ArticleHandler {
     public String create(Session session, HttpRequest request) {
         User loginUser = (User) session.get("user");
         if (loginUser == null) {
-            throw new IllegalStateException();
+            return "redirect:/login";
         }
 
         String content = request.getBody("content");
